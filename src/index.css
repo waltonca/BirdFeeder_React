@@ -1,69 +1,270 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+* {
+    padding: 0;
+    margin: 0;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+html {
+    font-size: 16px;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+    background: url(../images/bg.svg) center 120% / auto no-repeat, linear-gradient(rgb(249, 255, 255) 0%, rgb(56, 200, 230) 100%);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+header {
+    color: rgb(47, 93, 138);
+    padding: 20px 60px;
+    text-align: left;
+    overflow: hidden;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 1.5rem;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+header h1 {
+    float: left;
+    font-size: 3rem;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+header .buttons {
+    float: right;
+
+}
+
+header button {
+    cursor: pointer;
+}
+
+header #datetime {
+    font-size: 3rem;
+}
+
+.body {
+    padding: 0 60px;
+    overflow: hidden;
+    font-family: Poppins, sans-serif;
+}
+
+.body .top {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+
+.top .image-section {
+    width: 43%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 3px;
+    border-radius: 15px;
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.top .image-section img {
+    width: 100%;
+}
+
+.top .image-section #image {
+    position: relative;
+}
+
+.top .image-section #image #time {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 1.5rem;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+
+.top .image-section button {
+    float: right;
+    border-radius: 8px;
+    /* Half of the width and height */
+    background: #95e8f4;
+    /* Blue color */
+    color: #3d4e50;
+    /* White text */
+    text-align: center;
+    line-height: 20px;
+    /* Center the text vertically */
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.top .sensor-section {
+    width: 42%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 3px;
+    border-radius: 15px;
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    padding-bottom: 15px;
+    font-weight: 800;
+    font-size: 1.5em;
+    color: rgb(114, 126, 142);
+}
+
+.sensor-section svg {
+    fill: rgb(161, 185, 206);
+    margin-right: 1rem;
+    width: 1.6rem;
+}
+
+.temperature {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    margin-bottom: 0.8rem;
+}
+
+.humidity {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    margin-bottom: 0.8rem;
+}
+
+.flayout1 {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    margin-bottom: 0.8rem;
+}
+
+.flayout1 div {
+    color: rgb(123, 152, 178);
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    font-size: 1.5rem;
+    width: 15rem;
+}
+
+.flayout1 span {
+    color: rgb(48, 128, 200);
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+/* btn-slide */
+.sensor-section .title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hqCryO .off {
+    padding-left: 15px;
+}
+
+.hqCryO .on,
+.hqCryO .off {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+}
+
+.hqCryO {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    cursor: pointer;
+    inset: 0px;
+    transition: all 0.4s ease 0s;
+    border-radius: 55px;
+    background-color: rgb(119, 177, 199);
+}
+
+.bzpPMg {
+    position: absolute;
+    height: 16px;
+    width: 18px;
+    left: 2px;
+    top: 2px;
+    background-color: rgb(255, 255, 255);
+    transition: all 0.4s ease 0s;
+    border-radius: 44px;
+}
+
+.bottom {
+    margin-top: 1rem;
+    background-color: rgba(255, 255, 255, 0.75);
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 3px;
+    border-radius: 15px;
+    padding: 1.5rem 2rem;
+    overflow: hidden;
+}
+
+#weather {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    overflow-x: auto;
+}
+
+.weather-item {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.weather-item h6 {
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: rgb(69, 129, 197);
+}
+
+.weather-item img {
+    width: 4rem;
+    height: 4rem rem;
+    margin: 0.7rem 0px;
+}
+
+.weather-item p {
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: rgb(74, 111, 161);
+}
+
+.weather-item span {
+    font-size: 1.125rem;
+    color: rgb(74, 111, 161);
+    width: 5rem;
+    text-align: center;
+}
+
+footer {
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+    overflow: hidden;
 }
